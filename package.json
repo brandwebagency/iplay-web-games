@@ -1,5 +1,5 @@
 {
-  "name": "typing-shooter",
+  "name": "maze-game",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "deploy-typingshooter": "yarn build && firebase deploy --only hosting:typingshooter"
+    "deploy": "yarn build && firebase deploy --only hosting:mazegameiplay"
   },
   "dependencies": {
     "@github/markdown-toolbar-element": "^2.1.1",

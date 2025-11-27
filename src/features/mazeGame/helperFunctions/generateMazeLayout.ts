@@ -36,5 +36,23 @@ export const generateMaze = (width, height) => {
     }
   }
   
+  // Add extra paths to create loops and alternative routes
+  const extraPaths = Math.floor((width * height) * 0.05); // 5% extra openings
+  for (let i = 0; i < extraPaths; i++) {
+    // Pick a random wall
+    const x = Math.floor(Math.random() * (width - 2)) + 1;
+    const y = Math.floor(Math.random() * (height - 2)) + 1;
+    
+    if (maze[y][x] === 1) {
+      // Check if this wall is between two path cells
+      const horizontalPaths = (maze[y][x - 1] === 0 && maze[y][x + 1] === 0);
+      const verticalPaths = (maze[y - 1]?.[x] === 0 && maze[y + 1]?.[x] === 0);
+      
+      if (horizontalPaths || verticalPaths) {
+        maze[y][x] = 0;
+      }
+    }
+  }
+  
   return maze;
 };
