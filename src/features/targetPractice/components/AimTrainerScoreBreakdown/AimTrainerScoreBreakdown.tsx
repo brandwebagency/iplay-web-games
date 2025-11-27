@@ -44,14 +44,14 @@ const AimTrainerScoreBreakdown: React.FC<{ scoreDetails: Entry[] }> = ({
 
       {groups.map((group) => (
         <Box key={group.label} mb="4">
-          <Text weight="bold" size="4" color={group.color}>
+          <Text weight="bold" size="4" color={group.color as "cyan"}>
             {group.label} — {group.items.length} target
             {group.items.length !== 1 ? "s" : ""}
           </Text>
 
           <Grid gap="2" mt="2">
             {group.items.map((entry, idx) => (
-              <Card key={idx} p="2">
+              <Card key={idx} >
                 <Flex justify="between" align="center">
                   <Text weight="bold">{entry.ms} ms</Text>
                   <Text size="2" color="gray">
@@ -65,7 +65,7 @@ const AimTrainerScoreBreakdown: React.FC<{ scoreDetails: Entry[] }> = ({
         </Box>
       ))}
 
-      <Card mt="5" p="3">
+      <Card mt="5">
         <Text weight="bold" mb="2">
           How Scoring Works
         </Text>
