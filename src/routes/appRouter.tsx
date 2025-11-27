@@ -8,6 +8,7 @@ import PageNotFound from "@/features/error/pages/PageNotFound/PageNotFound";
 // - HOME ------------------------------------------------------------------
 import { siteRoutes } from "./siteRoutes";
 import MazeGamePage from "@/features/mazeGame/pages/MazeGamePage";
+import AimTrainer from "@/features/targetPractice/pages/AimTrainer";
 
 export const appRouter = () => {
   return createBrowserRouter([
@@ -20,7 +21,14 @@ export const appRouter = () => {
           path: siteRoutes.home.path,
           element: <MazeGamePage />,
         },
-        
+                {
+          path: siteRoutes.mazegame.path,
+          element: <MazeGamePage />,
+        },
+                        {
+          path: siteRoutes.targetPractice.path,
+          element: <AimTrainer />,
+        },
       ],
     },
   ]);
