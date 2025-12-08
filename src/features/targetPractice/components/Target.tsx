@@ -24,7 +24,8 @@ const Target: React.FC<Props> = ({ x, y, size = 75, onClick }) => {
     // lightweight visual
     // background:
     //   "radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), rgba(255,255,255,0)), linear-gradient(45deg, #ff4d4f 0%, #ff7a45 100%)",
-    background: "purple",
+    background:
+      "linear-gradient(135deg, rgba(229,112,231,1) 0%,rgba(200,94,199,1) 47%,rgba(168,73,163,1) 100%)",
     boxShadow: "0 2px 6px rgba(0,0,0,0.4)",
     padding: "8px",
   } as React.CSSProperties & { WebkitUserDrag: string };
